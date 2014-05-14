@@ -56,6 +56,8 @@ ENDLINE				;
 NEWLINE				\n
 COMENT				#.*
 PROPERTY			"."
+IS					"is"
+
 
 
 ID					_*[a-zA-Z][a-zA-Z0-9_]*
@@ -92,6 +94,7 @@ ID					_*[a-zA-Z][a-zA-Z0-9_]*
 {RETURN}			{return RETURN;}
 {BREAK}				{return BREAK;}
 {CONTINUE}			{return CONTINUE;}
+{IS}				{return IS;}
 
 {ID}		{yylval.STR = strdup(yytext); return ID;}
 
